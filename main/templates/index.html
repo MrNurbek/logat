@@ -30,28 +30,11 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
-
-
 </head>
 
 <body>
 
 <main>
-
-<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<!--        <a class="navbar-brand" href="#">Navbar</a>-->
-<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"-->
-<!--                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--            <span class="navbar-toggler-icon"></span>-->
-<!--        </button>-->
-<!--        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--            <div class="navbar-nav">-->
-<!--                <a class="nav-link active" href="index.html">Home</a>-->
-<!--                <a class="nav-link" href="about.html">About</a>-->
-<!--                <a class="nav-link" href="contact.html">Contact</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </nav>-->
 
 
     <section class="hero-section" style="     margin-bottom: 200px;">
@@ -86,6 +69,7 @@
                 </div>
             </div>
         </nav>
+
         <div class="container">
             <div class="row">
 
@@ -98,62 +82,88 @@
     align-items: center;">
 
 
-                        <form action="{% url 'search_results2' %} " method="GET" style="    display: flex;
+                        <form class="form-inline active-cyan-3 active-cyan-4" action="{% url 'search_results2' %} "
+                              method="GET" style="    display: flex;
     flex-direction: column;
     align-items: center;">
-                            <input style=" text-align: center;height:41px; width: 400px; border: 1px solid #000000;border-radius: 30px;"
-                                   type="search" id="gsearch" name="q">
-                            <br><br>
-                            <!--        <a href="#">-->
-<!--                            <input type="submit" value="qidirish" class="btn" style="">-->
-                            <div class="col">
-                                <button type="submit" value="qidirish" class="btn btn-primary">Qidirish</button>
+                            <div style="display: flex;
+    flex-wrap: nowrap;
+    align-items: center;">
+                                <div class="col">
+                                    <i class="fas fa-search" aria-hidden="true"></i>
+                                    <input class="form-control form-control-sm ml-3 " type="text"
+                                           placeholder="Search"
+                                           aria-label="Search"
+                                           style=" text-align: center;height:41px; width: 400px; border: 1px solid #000000;border-radius: 3px;"
+                                           type="search" id="gsearch" name="q">
+                                </div>
+
+
+                                <div class="col">
+                                    <button style="    width: 54px;
+    height: 41px;
+    border-radius: 3px;" type="submit" value="qidirish" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                                </div>
                             </div>
 
-                            <!--        </a><br>-->
+                            <br>
+                            <br>
+
+
                         </form>
 
-
-                        <h1>
+{% for word in word_list %}
+                        <h1 style="   border-width: 10px 10px 10px 10px;  border-style: solid dashed solid dashed; background-color: rgb(252 252 252 / 69%);border-color: #3b27b0 #c2c6eb #3b27b0 #c2c6eb; padding: 20px;">
                             <p>
                             <ul>
-                                {% for word in word_list %}
+
                                 <li>
                                     {% if word.description %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description }}</p>
                                     {% endif %}
                                     {% if word.description2 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description2 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description2 }}</p>
                                     {% endif %}
                                     {% if word.description3 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description3 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description3 }}</p>
                                     {% endif %}
                                     {% if word.description4 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description4 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description4 }}</p>
                                     {% endif %}
                                     {% if word.description5 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description5 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description5 }}</p>
                                     {% endif %}
                                     {% if word.description6 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description6 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description6 }}</p>
                                     {% endif %}
                                     {% if word.description7 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description7 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description7 }}</p>
                                     {% endif %}
                                     {% if word.description8 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description8 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description8 }}</p>
                                     {% endif %}
                                     {% if word.description9 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description9 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description9 }}</p>
                                     {% endif %}
                                     {% if word.description10 %}
-                                    <h1 style="color: black;"> {{ word.name }} -{{ word.description10 }}</h1>
+                                    <h1 style="color: black;"> {{ word.name }} </h1>
+                                    <p style="color: black;">{{ word.description10 }}</p>
                                     {% endif %}
                                 </li>
-                                {% endfor %}
+
                             </ul>
                             </p>
                         </h1>
+                         {% endfor %}
                         <div class="shape"></div>
 
                     </section>
@@ -172,20 +182,6 @@
     <div class="container">
         <div class="row">
 
-<!--            <div class="col-lg-6 col-12 mb-5 mb-lg-0">-->
-<!--                <div class="subscribe-form-wrap">-->
-<!--                    <h6>Subscribe. Every weekly.</h6>-->
-
-<!--                    <form class="custom-form subscribe-form" action="#" method="get" role="form">-->
-<!--                        <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*"-->
-<!--                               class="form-control" placeholder="Email Address" required="">-->
-
-<!--                        <div class="col-lg-12 col-12">-->
-<!--                            <button type="submit" class="form-control" id="submit">Subscribe</button>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-<!--            </div>-->
 
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-md-0 mb-lg-0">
                 <h6 class="site-footer-title mb-3">Contact</h6>
@@ -242,33 +238,6 @@
     <div class="container pt-5">
         <div class="row align-items-center">
 
-<!--            <div class="col-lg-2 col-md-3 col-12">-->
-<!--                <a class="navbar-brand" href="index.html">-->
-<!--                    <img src="{% static 'main/img/images/pod-talk-logo.png' %}" class="logo-image img-fluid"-->
-<!--                         alt="templatemo pod talk">-->
-<!--                </a>-->
-<!--            </div>-->
-
-<!--            <div class="col-lg-7 col-md-9 col-12">-->
-<!--                <ul class="site-footer-links">-->
-<!--                    <li class="site-footer-link-item">-->
-<!--                        <a href="#" class="site-footer-link">Homepage</a>-->
-<!--                    </li>-->
-
-<!--                    <li class="site-footer-link-item">-->
-<!--                        <a href="#" class="site-footer-link">Browse episodes</a>-->
-<!--                    </li>-->
-
-<!--                    <li class="site-footer-link-item">-->
-<!--                        <a href="#" class="site-footer-link">Help Center</a>-->
-<!--                    </li>-->
-
-<!--                    <li class="site-footer-link-item">-->
-<!--                        <a href="#" class="site-footer-link">Contact Us</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </div>-->
-
 
         </div>
     </div>
@@ -284,10 +253,44 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-<!--<script src="js/jquery.min.js"></script>-->
-<!--<script src="js/bootstrap.bundle.min.js"></script>-->
-<!--<script src="js/owl.carousel.min.js"></script>-->
-<!--<script src="js/custom.js"></script>-->
+<style>
+    .active-pink-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink input[type=text] {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-purple-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+.active-purple input[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+.active-cyan-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan input[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan .fa, .active-cyan-2 .fa {
+  color: #4dd0e1;
+}
+.active-purple .fa, .active-purple-2 .fa {
+  color: #ce93d8;
+}
+
+
+
+
+
+
+</style>
 
 </body>
 </html>
